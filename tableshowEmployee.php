@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
 		echo "<td>" . $row["shift"]. "</td>";
 		echo "<td>" . $row["salary"]. "</td>";
 		echo "<td>" . $row["dept_name"]. "</td>";
-		echo "<td>" . $row["Password"]. "</td>";
+		echo "<td>" . $row["password"]. "</td>";
 		echo '</tr>';
     }
 	
