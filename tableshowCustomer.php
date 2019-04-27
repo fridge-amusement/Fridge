@@ -2,7 +2,7 @@
 
 function show_customer($conn){
 
-//include "dbconnect.php";
+include "dbconnect.php";
 
 $sql = "SELECT * FROM customers";
 $result = $conn->query($sql);
