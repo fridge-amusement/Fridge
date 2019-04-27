@@ -18,13 +18,25 @@
 			
 				echo "<br> Tickets before the deletion<br>";
 			
-				show_ticket($conn);
+				//show_ticket($conn);
+				echo "<br/";
+				echo "DEBUGG INFO";
+				echo "<br/";
+				echo $t_id;
+				echo "<br/";
+				echo $t_cid;
+				echo "<br/";
 				
-				$sql = "DELETE FROM Tickets where ticket_id = '$t_id' and customer_id = '$t_cid'; ";
+				$purchased_sql = "DELETE FROM purchased where ticket_id = '".$t_id."' and customer_id = '".$t_cid."'";
+				$sql = "DELETE FROM ticket where ticket_id = '".$t_id."' and customer_id = '".$t_cid."'";
 				
+				$purchased_result = mysqli_query($conn, $purchased_sql);
+				if(!$purchased_result){
+					die('Could not delete data from purchased: ' . mysqli_error($conn));
+				}
 				$result = mysqli_query($conn, $sql);
 				if(!$result){
-					die('Could not delete data: ' . mysqli_error($conn));
+					die('Could not delete data from tickets: ' . mysqli_error($conn));
 				}
 			
 				echo "Removed data";
@@ -33,8 +45,8 @@
 				show_ticket($conn);
 				mysqli_close($conn);
 				
-			}
-		else{
+			} else {
+			echo "SOMETHING WENT WRONG";
 		?>
 		<br><br><br><br>
      <p>Enter Ticket info for deletion<br> </p>

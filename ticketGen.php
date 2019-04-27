@@ -39,7 +39,12 @@
             } else {
                 echo "Ticket purchased!\n";
             }
-            
+            //ADDS TICKET+CUSTOER TO TABLE 'PURCHASED'
+            $sql = "INSERT INTO purchased(ticket_id, customer_ID) VALUES ($_ticketID, $_custID)";
+            $retval = mysqli_query($conn, $sql); 
+            if(!$retval ) {
+                echo "Couldn't add to table purchased";
+            }
             //UPDATES LOYALTY POINTS
             $sql = "UPDATE customers SET loyalty_points = loyalty_points + 10 where customer_ID = $_custID";
             $retval = mysqli_query($conn, $sql); //SENDS UPDATE TO LOYALTY POINTS
