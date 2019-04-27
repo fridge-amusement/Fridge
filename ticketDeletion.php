@@ -27,15 +27,13 @@
 				echo $t_cid;
 				echo "<br/";
 				
-				$purchased_sql = "DELETE FROM purchased where ticket_id = '$t_id' and customer_id = '$t_cid;";
-				$sql = "DELETE FROM ticket where ticket_id = '$t_id' and customer_id = '$t_cid'; ";
+				$purchased_sql = "DELETE FROM purchased where ticket_id = '".$t_id."' and customer_id = '".$t_cid."'";
+				$sql = "DELETE FROM ticket where ticket_id = '".$t_id."' and customer_id = '".$t_cid."'";
 				
-				$purchased_result = mysqli_query($conn, $sql);
+				$purchased_result = mysqli_query($conn, $purchased_sql);
 				if(!$purchased_result){
 					die('Could not delete data from purchased: ' . mysqli_error($conn));
 				}
-
-
 				$result = mysqli_query($conn, $sql);
 				if(!$result){
 					die('Could not delete data from tickets: ' . mysqli_error($conn));
