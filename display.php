@@ -7,11 +7,15 @@
 
 <?php
 require("dbconnect.php");
-require("tableshowCustomer.php");
-require("tableshowEmployee.php");
+//these are in the functions folder
+require("functions/tableshowCustomer.php");
+require("functions/tableshowEmployee.php");
+require("functions/viewEmployee.php");
+
 
 show_employee($conn);
 show_customer($conn);
+show_timesheet($conn);
 ?>
 
 
