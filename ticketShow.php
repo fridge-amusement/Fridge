@@ -1,11 +1,18 @@
+<html>
+<body>
+	
+</body>
+
+
+
 <?php
 
 function show_ticket($conn){
 
 //include "dbconnect.php";
 
-$sql = "SELECT Customer.customer_ID, Customer.customer_name, Customer.loyalty_points, Ticket.ticket_ID, Ticket.sales_date
-		from Customer INNER JOIN ticket ON Ticket.customer_ID = Customer.customer_ID;";
+$sql = "SELECT customers.customer_ID, customers.customer_name, customers.loyalty_points, ticket.ticket_ID, ticket.sale_date from customers INNER JOIN ticket ON ticket.customer_ID = customers.customer_ID;";
+
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -24,7 +31,7 @@ if ($result->num_rows > 0) {
 		echo "<td>" . $row["customer_name"]. "</td>";
 		echo "<td>" . $row["loyalty_points"]. "</td>";
 		echo "<td>" . $row["ticket_ID"]. "</td>";
-		echo "<td>" . $row["sales_date"]. "</td>";
+		echo "<td>" . $row["sale_date"]. "</td>";
 		echo '</tr>';
     }
 	
@@ -39,4 +46,11 @@ if ($result->num_rows > 0) {
 }
 //$conn->close();
 }
+?>
+
+
+<?php
+//CALLING FUNCTION
+	include "dbconnect.php";
+	show_ticket($conn);
 ?>
