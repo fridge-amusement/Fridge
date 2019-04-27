@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
 		echo "<td>" . $row["loyalty_points"]. "</td>";
 		echo "<td>" . $row["address"]. "</td>";
 		echo "<td>" . $row["email"]. "</td>";
-		echo "<td>" . $row["Password"]. "</td>";
+		echo "<td>" . $row["password"]. "</td>";
         echo "<td>" . $row["phone"]. "</td>";
 		echo '</tr>';
     }
