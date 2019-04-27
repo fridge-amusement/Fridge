@@ -13,7 +13,7 @@ if ($result->num_rows > 0) {
 	
 	echo '<table border>';
 	echo '<thead><tr>';
-	echo '<th>'."ID".'</th>'.'<th>'."Name".'</th>'.'<th>'."Loyalty Points".'</th>'.'<th>'."Address".'</th>'.'<th>'."Email".'</th>''<th>'."Password".'</th>''<th>'."Phone".'</th>';
+	echo '<th>'."ID".'</th>'.'<th>'."Name".'</th>'.'<th>'."Loyalty Points".'</th>'.'<th>'."Address".'</th>'.'<th>'."Email".'</th>'.'<th>'."Password".'</th>'.'<th>'."Phone".'</th>';
 	echo '</tr></thead>';
 	echo '<tbody>';
 
