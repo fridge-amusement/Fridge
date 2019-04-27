@@ -2,7 +2,7 @@
 
 function show_employee($conn){
 
-//include "dbconnect.php";
+include "dbconnect.php";
 
 $sql = "SELECT * FROM employees";
 $result = $conn->query($sql);
