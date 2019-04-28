@@ -6,7 +6,7 @@
 
 
 <body>
-    <div style="height:900px; background-color: lightblue;" align="center">
+    <div style="height:900px; background-color: white;" align="center">
         <br><br><br><br>
 
 
